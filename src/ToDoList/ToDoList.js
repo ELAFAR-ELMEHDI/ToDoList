@@ -33,7 +33,13 @@ class ToDoList extends Component {
     return this.state.todo.map(item => {
       return (
         <div key={item}>
-          {item} | <button onClick={this.deleteItem.bind(this)}>X</button>
+          <tr>
+            <td align="center"> {item} </td>
+            <td>
+              {" "}
+              <button onClick={this.deleteItem.bind(this)}>X</button>
+            </td>
+          </tr>
         </div>
       );
     });
@@ -51,7 +57,9 @@ class ToDoList extends Component {
           />
           <button onClick={this.addItem.bind(this)}>addToList</button>
         </form>
-        <div>{this.renderList()}</div>
+        <div>
+          <table>{this.renderList()}</table>
+        </div>
       </div>
     );
   }
